@@ -1,0 +1,64 @@
+﻿<Window x:Class="recruiteAssessment.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:recruiteAssessment"
+        mc:Ignorable="d"
+        Title="Recruitment Agency Management system" FontSize="100" Height="450" Width="800">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Row="0" Grid.Column="0" Margin="5" >
+            <TextBlock Text="Contractor Management" FontSize="20" FontWeight="Bold" Margin="5"/>
+
+            <Grid> <!--` 여기서 부터 입력창 옆으로 하려고 함-->
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+            </Grid>
+
+            <StackPanel Grid.Column="0">
+                <Label Content="First Name:" FontSize="15"/>
+                <TextBox x:Name="txtFirstName" FontSize="15"/>
+            </StackPanel>
+            <Label Content="Last Name:"  FontSize="15"/>
+            <TextBox  x:Name="txtLastName" FontSize="15"/>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button x:Name="addContractor" Content="Add Contractor" Click="addButton_Click" FontSize="15" Margin="0,0,15,0"/>
+                <Button x:Name="delContractor" Content="Delete Contractor" Click="delButton_Click" FontSize="15"/>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.Column="0" >
+            <TextBlock Text="Employee List" FontSize="30" FontWeight="Bold"/>
+            <ListBox x:Name="txtEmployeeList" Height="180"/>
+        </StackPanel>
+        
+        
+        <StackPanel Grid.Row="0" Grid.Column="1" >
+            <TextBlock Text="Job management(Job-emplyee match)" FontSize="30" FontWeight="Bold"/>
+            <Label Content="Job Title:"  FontSize="15"/>
+            <TextBox x:Name="txtJobTitle" FontSize="15"/>
+            <Label Content="Job Date:"  FontSize="15"/>
+            <TextBox  x:Name="txtJobDate" FontSize="15"/>
+
+            <Button x:Name="addJob" Content="Add Job" Click="addJob_Click" FontSize="15"/>
+            <Button x:Name="delJob" Content="Delete Job" Click="delJob_Click" FontSize="15"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="1" >
+            <TextBlock Text="Job List" FontSize="30" FontWeight="Bold"/>
+            <ListBox x:Name="txtJobList" Height="180"/>
+        </StackPanel>
+    </Grid>
+</Window>
