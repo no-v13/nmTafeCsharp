@@ -8,21 +8,21 @@ namespace recruiteAssessment
 {
     public class Contractor
     {
-        public string firstName { get; set; }
-        public string lastName { get; set; }
-        public DateTime startdate { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public DateTime Startdate { get; set; }
 
         public Contractor(){ }
-        public Contractor(string firstName, string lastName, DateTime startdate)
+        public Contractor(string FirstName, string LastName, DateTime Startdate)
         {
-            this.firstName = firstName;
-            this.lastName = lastName;
-            this.startdate = startdate;
+            this.FirstName = FirstName;
+            this.LastName = LastName;
+            this.Startdate = Startdate;
         }
 
         public override string ToString() 
         {
-            return $"{firstName},{lastName},{startdate}";
+            return $"{FirstName},{LastName},{Startdate}";
         }
 
     }

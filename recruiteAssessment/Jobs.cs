@@ -13,10 +13,16 @@ namespace recruiteAssessment
         public DateTime jobDate { get; set; }
 
         public bool isDone = false;
-
-        //이 일자리를 맡은 계약직 객체
-        Contractor contractor = null;
-        public Jobs() { }
+        public Contractor assignContractor {  get; set; }
+        
+       
+        public Jobs() 
+        {
+            jobTitle = "";
+            totalSalary = 0;
+            jobDate = DateTime.Now ;
+            isDone = false;
+        }
 
         public Jobs(string jobTitle, int totalSalary, DateTime jobDate, bool isDone)
         {

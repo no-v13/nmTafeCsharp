@@ -1,0 +1,15 @@
+C:\Users\20177849.ED\source\repos\nmTafePractice\recruiteAssessment\bin\Debug\recruiteAssessment.exe.config
+C:\Users\20177849.ED\source\repos\nmTafePractice\recruiteAssessment\bin\Debug\recruiteAssessment.exe
+C:\Users\20177849.ED\source\repos\nmTafePractice\recruiteAssessment\bin\Debug\recruiteAssessment.pdb
+C:\Users\20177849.ED\source\repos\nmTafePractice\recruiteAssessment\obj\Debug\recruiteAssessment.csproj.AssemblyReference.cache
+C:\Users\20177849.ED\source\repos\nmTafePractice\recruiteAssessment\obj\Debug\MainWindow.g.cs
+C:\Users\20177849.ED\source\repos\nmTafePractice\recruiteAssessment\obj\Debug\App.g.cs
+C:\Users\20177849.ED\source\repos\nmTafePractice\recruiteAssessment\obj\Debug\recruiteAssessment_MarkupCompile.cache
+C:\Users\20177849.ED\source\repos\nmTafePractice\recruiteAssessment\obj\Debug\recruiteAssessment_MarkupCompile.lref
+C:\Users\20177849.ED\source\repos\nmTafePractice\recruiteAssessment\obj\Debug\MainWindow.baml
+C:\Users\20177849.ED\source\repos\nmTafePractice\recruiteAssessment\obj\Debug\recruiteAssessment.g.resources
+C:\Users\20177849.ED\source\repos\nmTafePractice\recruiteAssessment\obj\Debug\recruiteAssessment.Properties.Resources.resources
+C:\Users\20177849.ED\source\repos\nmTafePractice\recruiteAssessment\obj\Debug\recruiteAssessment.csproj.GenerateResource.cache
+C:\Users\20177849.ED\source\repos\nmTafePractice\recruiteAssessment\obj\Debug\recruiteAssessment.csproj.CoreCompileInputs.cache
+C:\Users\20177849.ED\source\repos\nmTafePractice\recruiteAssessment\obj\Debug\recruiteAssessment.exe
+C:\Users\20177849.ED\source\repos\nmTafePractice\recruiteAssessment\obj\Debug\recruiteAssessment.pdb
