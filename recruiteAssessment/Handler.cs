@@ -23,9 +23,11 @@ namespace recruiteAssessment
            Contractor newContractors = new Contractor(FirstName,LastName,StartDate);
            contractors.Add(newContractors);
         }
-        public void AddJob(string JobTitle, DateTime JobDate)
+        
+       
+        public void AddJob(string JobTitle, string totalSalary, DateTime JobDate)
         {
-            Jobs newjob = new Jobs(JobTitle,JobDate); // 쌰갈 여기말이야 개 빡치네
+            Jobs newjob = new Jobs(JobTitle, totalSalary, JobDate);
             jobs.Add(newjob);
         }
     }

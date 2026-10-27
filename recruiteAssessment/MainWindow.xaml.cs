@@ -24,9 +24,10 @@ namespace recruiteAssessment
         }
 
         Handler handler = new Handler();
+        Jobs  jobs = new Jobs();
         private void addButton_Click(object sender, RoutedEventArgs e)
         {
-            handler.AddContractor(txtFirstName.Text, txtLastName.Text, txtStartdate.SelectedDate.Value); // value 를 몰랐러ㅜㅜㅜ 
+            handler.AddContractor(txtFirstName.Text, txtLastName.Text, txtStartdate.SelectedDate.Value); 
             txtEmployeeList.ItemsSource = new List<string>();
             txtEmployeeList.ItemsSource = handler.Contractors;
 
@@ -35,9 +36,15 @@ namespace recruiteAssessment
             txtStartdate.SelectedDate = null;
         }
 
-        private void addJob_Click(object sender, RoutedEventArgs e)
+        public void AddJob(string jobTitle, string totalSalary, DateTime jobDate)
         {
-            handler.AddJob(txtJobTitle.Text, txtJobDate.SelectedDate.Value); // 쌰갈 기본 생성자 해도 이건 안되는건가
+            handler.AddJob(txtJobTitle.Text, txtJobSalary.Text, txtJobDate.SelectedDate.Value);
+            txtJobList.ItemsSource = new List<string>();
+            txtJobList.ItemsSource = handler.Jobs;
+
+            txtJobTitle.Clear();
+            txtJobSalary.Clear();
+            txtJobDate.SelectedDate = null;
         }
 
         private void delButton_Click(object sender, RoutedEventArgs e)
@@ -53,11 +60,15 @@ namespace recruiteAssessment
 
         }
 
-        private void txtFirstName_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+
+        private void jobCostReset_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        
+        private void jobCostSearch_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
