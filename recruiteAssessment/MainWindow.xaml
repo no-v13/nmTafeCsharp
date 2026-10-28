@@ -42,13 +42,14 @@
 
                 <Label Content="Start Date"  FontSize="15" Grid.Row="2" Grid.Column="0"/>
                 <DatePicker Name="txtStartdate" FontSize="15" Grid.Row="2" Grid.Column="1"/>
-                
-                <Label Content="Search"  FontSize="15" Grid.Row="3" Grid.Column="0"/>
-                <TextBox Name="txtContSearch" FontSize="15" Grid.Row="3" Grid.Column="1"/>
 
-                <Button x:Name="addContractor" Content="Add Contractor" Click="addButton_Click" FontSize="15"  Grid.Row="4" Grid.Column="0" Margin="5"/>
-                <Button x:Name="delContractor" Content="Delete Contractor" Click="delButton_Click" FontSize="15" Grid.Row="4" Grid.Column="1" Margin="5"/>
-               
+
+                <Button x:Name="addContractor" Content="Add Contractor" Click="addButton_Click" FontSize="15"  Grid.Row="3" Grid.Column="0" Margin="5"/>
+                <Button x:Name="delContractor" Content="Delete Contractor" Click="delButton_Click" FontSize="15" Grid.Row="3" Grid.Column="1" Margin="5"/>
+
+                <Button x:Name="SearchEmployee" Content="Search" FontSize="15" Grid.Row="4" Grid.Column="0" Click="SearchEmployee_Click" Margin="5"/>
+                <TextBox Name="txtContSearch" FontSize="15" Grid.Row="4" Grid.Column="1"/>
+
             </Grid>
         </StackPanel>
 
@@ -71,7 +72,7 @@
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
+                    
                 </Grid.RowDefinitions>
 
                 <Label Content="Job Title:"  FontSize="15" Grid.Row="0" Grid.Column="0"/>
@@ -85,13 +86,11 @@
                 <TextBox x:Name="txtJobSalary" FontSize="15" Grid.Row="2" Grid.Column="1"/>
 
                 <Label Content="Contractor List"  FontSize="15" Grid.Row="3" Grid.Column="0"/>
-                <ListBox x:Name="txtassign" FontSize="15" Grid.Row="3" Grid.Column="1"/>
+                <ComboBox x:Name="cmbAssignWorker" FontSize="15" Grid.Row="3" Grid.Column="1" SelectionChanged="cmbAssignWorker_SelectionChanged"/>
 
-                <Label Content="Search"  FontSize="15" Grid.Row="4" Grid.Column="0"/>
-                <TextBox Name="txtJobSearch" FontSize="15" Grid.Row="4" Grid.Column="1"/>
+                <Button x:Name="addJob" Content="Add Job" Click="addJob_Click" FontSize="15" Grid.Row="4" Grid.Column="0" Margin="5"/>
+                <Button x:Name="delJob" Content="Delete Job" Click="delJob_Click" FontSize="15" Grid.Row="4" Grid.Column="1" Margin="5"/>
 
-                <Button x:Name="addJob" Content="Add Job" Click="addJob_Click" FontSize="15" Grid.Row="5" Grid.Column="0" Margin="5"/>
-                <Button x:Name="delJob" Content="Delete Job" Click="delJob_Click" FontSize="15" Grid.Row="5" Grid.Column="1" Margin="5"/>
             </Grid>
         </StackPanel>
         
@@ -113,7 +112,7 @@
                     
                 
                 <StackPanel Grid.Row="2">
-                    <ListBox x:Name="txtJobList" Height="auto"/> <!--`I want to  match the size-->
+                <ListBox x:Name="txtJobList"  Height="100" FontSize="15"/> <!--`I want to  match the size-->
                 </StackPanel>
             
         </StackPanel>
