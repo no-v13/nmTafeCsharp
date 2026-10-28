@@ -28,8 +28,6 @@ namespace recruiteAssessment
         private void addButton_Click(object sender, RoutedEventArgs e)
         {
             handler.AddContractor(txtFirstName.Text, txtLastName.Text, txtStartdate.SelectedDate.Value); 
-            txtEmployeeList.ItemsSource = new List<string>();
-            txtEmployeeList.ItemsSource = handler.Contractors;
 
             txtFirstName.Clear();
             txtLastName.Clear();
