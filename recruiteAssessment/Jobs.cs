@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -13,9 +14,11 @@ namespace recruiteAssessment
         public DateTime jobDate { get; set; }
 
         public bool isDone = false;
-        public Contractor assignContractor {  get; set; }
+        public List<Contractor> AssignContractorList {  get; set; } = new List<Contractor>();
+
+        public string AssignedWorker { get { return string.Join(", ", AssignContractorList); } }
         
-       
+        
         public Jobs() 
         {
             

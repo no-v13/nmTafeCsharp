@@ -108,7 +108,7 @@
                 <TextBox x:Name="txtJobSalary" FontSize="15" Grid.Row="2" Grid.Column="1"/>
 
                 <Label Content="Contractor List"  FontSize="15" Grid.Row="3" Grid.Column="0"/>
-                <ComboBox x:Name="cmbAssignWorker" FontSize="15" Grid.Row="3" Grid.Column="1" SelectionChanged="cmbAssignWorker_SelectionChanged"/>
+                <ListBox x:Name="lstContractors" SelectionMode="Multiple" FontSize="15" Grid.Row="3" Grid.Column="1"/>
 
                 <Button x:Name="addJob" Content="Add Job" Click="addJob_Click" FontSize="15" Grid.Row="4" Grid.Column="0" Margin="5"/>
                 <Button x:Name="delJob" Content="Delete Job" Click="delJob_Click" FontSize="15" Grid.Row="4" Grid.Column="1" Margin="5"/>
@@ -162,7 +162,7 @@
                             <GridViewColumn Header="jobTitle" DisplayMemberBinding="{Binding Path= jobTitle}"/>
                             <GridViewColumn Header="totalSalary" DisplayMemberBinding="{Binding Path=totalSalary}"/>
                             <GridViewColumn Header="jobDate" DisplayMemberBinding="{Binding Path= jobDate}"/>
-                            <GridViewColumn Header="Assigned worker"/>
+                            <GridViewColumn Header="Assigned worker" DisplayMemberBinding="{Binding Path=AssignedWorker}"/>
                         </GridView>
                     </ListView.View>
                 </ListView>

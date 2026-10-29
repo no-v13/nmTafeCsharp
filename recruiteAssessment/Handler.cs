@@ -36,10 +36,14 @@ namespace recruiteAssessment
 
         }
 
-        public void AddJob(string JobTitle, int totalSalary, DateTime JobDate)
+        public Jobs AddJob(string JobTitle, int totalSalary, DateTime JobDate)
         {
             Jobs newJob = new Jobs(JobTitle, totalSalary, JobDate);
+            
             jobList.Add(newJob);
+
+            return newJob;
+            
         }
 
         public void DelJob(Jobs job)

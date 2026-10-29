@@ -32,9 +32,9 @@ namespace recruiteAssessment
             txtEmployeeList.ItemsSource = null;
             txtEmployeeList.ItemsSource = handler.ContractorList;
 
-            cmbAssignWorker.ItemsSource = null;
-            cmbAssignWorker.ItemsSource = handler.ContractorList;
-
+            
+            lstContractors.ItemsSource = null;
+            lstContractors.ItemsSource = handler.ContractorList;
 
             txtJobList.ItemsSource = null;
             txtJobList.ItemsSource = handler.JobList;
@@ -50,12 +50,17 @@ namespace recruiteAssessment
            
             RefreshView();
 
-            cmbAssignWorker.SelectedIndex = -1; //combobox- assigning worker to the joblist
+            
         }
 
         public void addJob_Click(object sender, RoutedEventArgs e)
         {
-            handler.AddJob(txtJobTitle.Text, int.Parse(txtJobSalary.Text), txtJobDate.SelectedDate.Value);
+            Jobs newJob = handler.AddJob(txtJobTitle.Text, int.Parse(txtJobSalary.Text), txtJobDate.SelectedDate.Value);
+
+            foreach (Contractor contractor in lstContractors.SelectedItems)
+            {
+                newJob.AssignContractorList.Add(contractor);
+            }
 
             txtJobTitle.Clear();
             txtJobSalary.Clear();
@@ -102,28 +107,33 @@ namespace recruiteAssessment
 
         private void jobCostSearch_Click(object sender, RoutedEventArgs e)
         {
-            //read min, max-> if min < object's totalSalary <  max: save it to new/handler?
-            //show this to the jobList
+            List<Jobs> searchCost = new List<Jobs>();
+
+            foreach(var cost in handler.JobList)
+            {
+                if (int.Parse(txtMincost.Text)<= cost.totalSalary && cost.totalSalary <= int.Parse(txtMaxcost.Text))
+                {
+                    searchCost.Add(cost);
+                }
+            }
+            txtJobList.ItemsSource = searchCost;
         }
 
         private void SearchEmployee_Click(object sender, RoutedEventArgs e)
         {
-            //txtContSearch.Text.to upper/lower  %LIke  txtFirstName  txtLastName     .Contains()
-            //save that to the new? or handler
-            //show the result to the list
-        }
 
-        private void cmbAssignWorker_SelectionChanged(object sender, SelectionChangedEventArgs e) 
-        {
-            //cmbAssignWorker
-            //combo_box click-> assign th job to the worker
-            // index -> 
-            int index = cmbAssignWorker.SelectedIndex;
-            if (index < 0) 
-            {
-                MessageBox.Show("Please select the worker to assign"); // editing needed
+            string keyword = txtContSearch.Text.ToLower();
+            List<Contractor> searchList = new List<Contractor>();
+            foreach (var word in handler.ContractorList) 
+            { 
+                if(word.FirstName.Contains(keyword) || word.LastName.Contains(keyword))
+                {
+                    searchList.Add(word);                    
+                }               
             }
-
+            txtEmployeeList.ItemsSource = searchList;
         }
+
+
     }
 }
