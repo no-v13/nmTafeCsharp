@@ -9,7 +9,7 @@ namespace recruiteAssessment
     public class Jobs
     {
         public string jobTitle {  get; set; }
-        public string totalSalary { get; set; }
+        public int totalSalary { get; set; }
         public DateTime jobDate { get; set; }
 
         public bool isDone = false;
@@ -21,7 +21,7 @@ namespace recruiteAssessment
             
         }
 
-        public Jobs(string jobTitle, string totalSalary, DateTime jobDate)
+        public Jobs(string jobTitle, int totalSalary, DateTime jobDate)
         {
             this.jobTitle = jobTitle;
             this.totalSalary = totalSalary;

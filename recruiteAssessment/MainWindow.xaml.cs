@@ -25,19 +25,19 @@ namespace recruiteAssessment
         }
 
         Handler handler = new Handler();
-        Jobs  jobs = new Jobs();
+        
 
         public void RefreshView()  //updates the Listbox
         {
             txtEmployeeList.ItemsSource = null;
-            txtEmployeeList.ItemsSource = handler.Contractors;
+            txtEmployeeList.ItemsSource = handler.ContractorList;
 
             cmbAssignWorker.ItemsSource = null;
-            cmbAssignWorker.ItemsSource = handler.Contractors;
+            cmbAssignWorker.ItemsSource = handler.ContractorList;
 
 
             txtJobList.ItemsSource = null;
-            txtJobList.ItemsSource = handler.Jobs;
+            txtJobList.ItemsSource = handler.JobList;
         }
 
         private void addButton_Click(object sender, RoutedEventArgs e)
@@ -55,7 +55,7 @@ namespace recruiteAssessment
 
         public void addJob_Click(object sender, RoutedEventArgs e)
         {
-            handler.AddJob(txtJobTitle.Text, txtJobSalary.Text, txtJobDate.SelectedDate.Value);
+            handler.AddJob(txtJobTitle.Text, int.Parse(txtJobSalary.Text), txtJobDate.SelectedDate.Value);
 
             txtJobTitle.Clear();
             txtJobSalary.Clear();
@@ -72,7 +72,7 @@ namespace recruiteAssessment
             }
             else
             {
-                Contractor contractor = handler.Contractors[index];
+                Contractor contractor = handler.ContractorList[index];
                 handler.DelContractor(contractor);
                 RefreshView();
             }
@@ -89,7 +89,7 @@ namespace recruiteAssessment
             }
             else
             {
-                Jobs job = handler.Jobs[index];
+                Jobs job = handler.JobList[index];
                 handler.DelJob(job);
                 RefreshView();
             }
@@ -113,8 +113,16 @@ namespace recruiteAssessment
             //show the result to the list
         }
 
-        private void cmbAssignWorker_SelectionChanged(object sender, SelectionChangedEventArgs e) //combo_box click-> assign th job to the worker// maybe not needed
+        private void cmbAssignWorker_SelectionChanged(object sender, SelectionChangedEventArgs e) 
         {
+            //cmbAssignWorker
+            //combo_box click-> assign th job to the worker
+            // index -> 
+            int index = cmbAssignWorker.SelectedIndex;
+            if (index < 0) 
+            {
+                MessageBox.Show("Please select the worker to assign"); // editing needed
+            }
 
         }
     }

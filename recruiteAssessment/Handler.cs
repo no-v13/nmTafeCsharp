@@ -9,23 +9,20 @@ namespace recruiteAssessment
 {
     class Handler
     {
-        private List<Jobs> jobs = new List<Jobs>(); 
-        private List<Contractor> contractors = new List<Contractor>();
-        // plural : [jobs / contractors] : A list that hold items
-        // singular:[job/conractor] : One specific item from the  list
-        // new :    [newjob/newContr-] :to the memory
-        public Handler() { }
+        private List<Jobs> jobList = new List<Jobs>(); 
+        private List<Contractor> contractorList = new List<Contractor>();
+       
 
         // property (encapsulate)
-        public List<Jobs> Jobs { get { return jobs; } } // also List
-        public List<Contractor> Contractors { get { return contractors; } }  // also List
+        public List<Jobs> JobList { get { return jobList; } } 
+        public List<Contractor> ContractorList { get { return contractorList; } } 
 
 
 
         public void AddContractor(string FirstName, string LastName, DateTime StartDate)
         {
-            Contractor newContractors = new Contractor(FirstName, LastName, StartDate);
-            contractors.Add(newContractors);
+            Contractor newContractor = new Contractor(FirstName, LastName, StartDate);
+            contractorList.Add(newContractor);
         }
 
         public void DelContractor(Contractor contractor)
@@ -33,23 +30,23 @@ namespace recruiteAssessment
             
             if (contractor != null) 
             {
-               contractors.Remove(contractor); //contractors] : A list that hold items / [conractor] : One specific item from the  list
+                contractorList.Remove(contractor); /// [conractor] : One specific item from the  list
 
             }
 
         }
 
-        public void AddJob(string JobTitle, string totalSalary, DateTime JobDate)
+        public void AddJob(string JobTitle, int totalSalary, DateTime JobDate)
         {
-            Jobs newjob = new Jobs(JobTitle, totalSalary, JobDate);
-            jobs.Add(newjob);
+            Jobs newJob = new Jobs(JobTitle, totalSalary, JobDate);
+            jobList.Add(newJob);
         }
 
         public void DelJob(Jobs job)
         {
-            if(jobs != null)
+            if(job != null) // 왜 잡인가 잡리스트가 아니라
             {
-                jobs.Remove(job);
+                jobList.Remove(job);
             }
         }
     }   
